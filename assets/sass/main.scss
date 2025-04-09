@@ -612,6 +612,15 @@ $size-header-pad: 4em;
 
 		&.thumb {
 			text-align: center;
+			width: 200px; // <----added lines 615-623 to try and target the thumb nail
+			height: 200px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 
 			&:after {
 				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
