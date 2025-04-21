@@ -10,6 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script type="text/javascript">
+  		(function(){
+    		emailjs.init("NXQi84qPRf7-vCnhI");
+  		})();
+	  </script>
+
 	</head>
 	<body class="is-preload">
 
@@ -80,16 +87,17 @@
 						<p>Let's chat! Send me questions, concerns, cat memes, job offers....</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								<form id="contact-form">
 									<div class="row gtr-uniform gtr-50">
 										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
 										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
 										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
 									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" /></li>
+									</ul>
 								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
+							
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
@@ -452,6 +460,22 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+			
+					emailjs.sendForm('service_p47prq8', 'template_ualtpma', this)
+						.then(function() {
+							alert('Message sent successfully!');
+						}, function(error) {
+							console.error('FAILED...', error);
+							alert('Something went wrong. Try again!');
+						});
+			
+					this.reset();
+				});
+			</script>
+			
 
 	</body>
 </html>
