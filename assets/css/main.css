@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	
 }
 
 ol, ul {
@@ -100,7 +101,7 @@ input, select, textarea {
 	body, input, select, textarea {
 		color: #a2a2a2;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 16pt;
+		font-size: 18pt;
 		font-weight: 400;
 		line-height: 1.75em;
 	}
@@ -152,7 +153,8 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 1.75em;
+		font-weight: bold;
 		line-height: 1.5em;
 	}
 
@@ -2571,12 +2573,12 @@ input, select, textarea {
 		} /* I added this section to adjust the image size */
 
 		.work-item h3 {
-			font-size: 1em;
+			font-size: 1.5em;
 			margin: 0 0 0.5em 0;
 		}
 
 		.work-item p {
-			font-size: 0.8em;
+			font-size: 1em;
 			line-height: 1.5em;
 			margin: 0;
 		}
@@ -2642,15 +2644,21 @@ input, select, textarea {
 
 		#header h1 {
 			color: rgba(255, 255, 255, 0.5);
-			font-size: 1.35em;
+			font-size: 2em; /* changed from 1.25em?? */
 			line-height: 1.75em;
 			margin: 0;
 		}
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
-			width: 6.25em;
+			width: 15em; /* changed this from original 6.25em */
 		}
+
+	
+		 #header .language-logos i {
+			font-size: 50px;
+			
+		} /* added this to try and address language logo size */
 
 /* Footer */
 
@@ -2992,7 +3000,7 @@ input, select, textarea {
 	@media screen and (max-width: 1800px) {
 
 		/* Basic */
-
+		/* font size test at 11:11 */
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
@@ -3226,5 +3234,6 @@ input, select, textarea {
 				margin-left: 0;
 				padding-left: 0;
 			}
+			
 
 	}
